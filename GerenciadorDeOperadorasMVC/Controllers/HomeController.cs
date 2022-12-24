@@ -15,16 +15,16 @@ namespace GerenciadorDeOperadorasMVC.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult Sobre()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            ViewData["Mensagem"] = "Gerenciador de receitas de Operadoras de saúde em C#";
+            ViewData["Desenvolvedor"] = "André Lopes";
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult Contato()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Mensegem"] = "Entre em contato com a Techno Health";
 
             return View();
         }
