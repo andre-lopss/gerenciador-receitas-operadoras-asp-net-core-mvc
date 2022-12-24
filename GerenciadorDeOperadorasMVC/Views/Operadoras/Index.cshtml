@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GerenciadorDeOperadorasMVC.Models.Operadora>
+
+@{
+    ViewData["Title"] = "Operadoras";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create">Adicionar Operadora</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Detalhes", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Excluir", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
