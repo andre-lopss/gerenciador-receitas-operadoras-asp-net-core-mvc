@@ -37,7 +37,8 @@ namespace GerenciadorDeOperadorasMVC
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<GerenciadorDeOperadorasMVCContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("GerenciadorDeOperadorasMVCContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("GerenciadorDeOperadorasMVCContext"), builder =>
+                        builder.MigrationsAssembly("GerenciadorDeOperadorasMVC")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
