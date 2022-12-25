@@ -13,14 +13,14 @@ namespace GerenciadorDeOperadorasMVC.Controllers
 
         public IActionResult Sobre()
         {
-            ViewData["Mensagem"] = "Gerenciador de receitas de Operadoras de saúde em C#";
+            ViewData["Mensagem"] = "APLICAÇÃO PARA GERENCIAMENTO DE RECEITAS DE OPERADORAS DE SAÚDE EM C#(CSHARP)";
             ViewData["Desenvolvedor"] = "André Lopes";
             return View();
         }
 
         public IActionResult Contato()
         {
-            ViewData["Mensegem"] = "Entre em contato com a Techno Health";
+            ViewData["Mensegem"] = "ENTRE EM CONTATO COM A TECHNO HEALTH";
 
             return View();
         }

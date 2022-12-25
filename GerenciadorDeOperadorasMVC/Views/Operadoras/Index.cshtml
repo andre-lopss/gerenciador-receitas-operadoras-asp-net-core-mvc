@@ -1,17 +1,17 @@
 ﻿@model IEnumerable<GerenciadorDeOperadorasMVC.Models.Operadora>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "OPERADORAS";
 }
 
-<h2>Operadoras</h2>
+<h2>@ViewData["Title"]</h2>
 
 <p>
     <a asp-action="Create">Adicionar Operadora</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
+        <tr class="success">
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
