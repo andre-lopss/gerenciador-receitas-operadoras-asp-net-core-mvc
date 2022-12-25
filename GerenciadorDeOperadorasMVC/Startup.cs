@@ -47,6 +47,7 @@ namespace GerenciadorDeOperadorasMVC
             services.AddScoped<ServicoPopularBase>();
             services.AddScoped<BeneficiarioService>();
             services.AddScoped<OperadoraService>();
+            services.AddScoped<RegistroPlanosService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
