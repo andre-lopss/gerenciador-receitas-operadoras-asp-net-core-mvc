@@ -1,0 +1,47 @@
+﻿@model GerenciadorDeOperadorasMVC.Models.Beneficiario
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Detalhes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Aniversario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Aniversario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorPlano)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ValorPlano)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Operadora)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Operadora.Nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default">Editar</a>
+    <a asp-action="Index">Voltar à listagem</a>
+</div>
