@@ -1,7 +1,59 @@
-﻿
+﻿@model IEnumerable<GerenciadorDeOperadorasMVC.Models.Beneficiario>
+@{
+    ViewData["Title"] = "Beneficiário";
+}
+
 @{
     ViewData["Title"] = "Beneficiários";
 }
 
 <h2>@ViewData["Title"]</h2>
 
+<p>
+    <a asp-action="Create">Adicionar vida</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aniversario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorPlano)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aniversario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorPlano)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
