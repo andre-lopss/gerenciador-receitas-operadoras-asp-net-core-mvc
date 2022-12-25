@@ -30,7 +30,7 @@ namespace GerenciadorDeOperadorasMVC.Models
         public double ValorPlano { get; set; }
 
         public Operadora Operadora { get; set; }
-        //public int OperadoraId { get; set; }
+        public int OperadoraId { get; set; }
         public ICollection<RegistroPlano> Planos { get; set; } = new List<RegistroPlano>();
 
         public Beneficiario()
