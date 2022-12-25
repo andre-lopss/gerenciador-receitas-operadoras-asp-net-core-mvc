@@ -13,6 +13,8 @@ namespace GerenciadorDeOperadorasMVC.Models
         {
         }
 
-        public DbSet<GerenciadorDeOperadorasMVC.Models.Operadora> Operadora { get; set; }
+        public DbSet<Operadora> Operadora { get; set; }
+        public DbSet<Beneficiario> Beneficiario { get; set; }
+        public DbSet<RegistroPlano> RegistroPlano { get; set; }
     }
 }
