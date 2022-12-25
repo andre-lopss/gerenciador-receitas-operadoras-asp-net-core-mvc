@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using GerenciadorDeOperadorasMVC.Models;
 using GerenciadorDeOperadorasMVC.Services;
@@ -85,7 +84,7 @@ namespace GerenciadorDeOperadorasMVC.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
+                return RedirectToAction(nameof(Error), new { message = "Id não fornecido" });
             }
 
             var obj = await _beneficiarioService.FindByIdAsync(id.Value);
@@ -140,11 +139,11 @@ namespace GerenciadorDeOperadorasMVC.Controllers
             }
         }
 
-        public IActionResult Error(string message)
+        public IActionResult Error(string mensagem)
         {
             var viewModel = new ErrorViewModel
             {
-                Message = message,
+                Message = mensagem,
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
             };
             return View(viewModel);
