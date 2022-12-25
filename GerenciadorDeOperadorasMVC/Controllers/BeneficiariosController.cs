@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GerenciadorDeOperadorasMVC.Models;
 using GerenciadorDeOperadorasMVC.Services;
+using GerenciadorDeOperadorasMVC.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GerenciadorDeOperadorasMVC.Controllers
@@ -19,32 +20,32 @@ namespace GerenciadorDeOperadorasMVC.Controllers
             _operadoraService = operadoraService;
         }
 
-        ////public async Task<IActionResult> Index()
-        ////{
-        ////    var list = await _beneficiarioService.FindAllAsync();
-        ////    return View(list);
-        ////}
+        public async Task<IActionResult> Index()
+        {
+            var list = await _beneficiarioService.FindAllAsync();
+            return View(list);
+        }
 
-        ////public async Task<IActionResult> Create()
-        ////{
-        ////    var operadoras = await _operadoraService.FindAllAsync();
-        ////    var viewModel = new BeneficiarioFormularioViewModel { Operadoras = operadoras };
-        ////    return View(viewModel);
-        ////}
+        public async Task<IActionResult> Create()
+        {
+            var operadoras = await _operadoraService.FindAllAsync();
+            var viewModel = new BeneficiarioFormularioViewModel { Operadoras = operadoras };
+            return View(viewModel);
+        }
 
-        ////[HttpPost]
-        ////[ValidateAntiForgeryToken]
-        ////public async Task<IActionResult> Create(Beneficiario beneficiario)
-        ////{
-        ////    if (!ModelState.IsValid)
-        ////    {
-        ////        var operadoras = await _operadoraService.FindAllAsync();
-        ////        var viewModel = new BeneficiarioFormularioViewModel { Beneficiario = beneficiario, Operadora = operadoras };
-        ////        return View(viewModel);
-        ////    }
-        ////    await _beneficiarioService.InsertAsync(beneficiario);
-        ////    return RedirectToAction(nameof(Index));
-        ////}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Beneficiario beneficiario)
+        {
+            if (!ModelState.IsValid)
+            {
+                var operadoras = await _operadoraService.FindAllAsync();
+                var viewModel = new BeneficiarioFormularioViewModel { Beneficiario = beneficiario, Operadoras = operadoras };
+                return View(viewModel);
+            }
+            await _beneficiarioService.InsertAsync(beneficiario);
+            return RedirectToAction(nameof(Index));
+        }
 
         //public async Task<IActionResult> Delete(int? id)
         //{

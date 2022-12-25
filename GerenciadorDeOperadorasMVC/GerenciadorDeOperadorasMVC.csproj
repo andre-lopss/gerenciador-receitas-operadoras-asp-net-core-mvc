@@ -12,6 +12,12 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.Lolita.SqlServer" Version="1.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Beneficiarios\Delete.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptTarget>ES3</TypeScriptTarget>
     <TypeScriptJSXEmit>Preserve</TypeScriptJSXEmit>
